@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="script.css"> <!-- Link ke file CSS -->
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <div class="options">
+        <label for="length">Jumlah Karakter:</label>
+        <input type="number" id="length" min="1" value="6"><br><br>
+
+        <label><input type="checkbox" id="lowercase" checked> Huruf Kecil</label>
+        <label><input type="checkbox" id="uppercase" checked> Huruf Besar</label>
+        <label><input type="checkbox" id="numbers" checked> Angka</label>
+        <label><input type="checkbox" id="symbols" checked> Simbol Khusus</label><br><br>
+    </div>
+
+    <button onclick="generatePassword()">Buat Password</button>
+    <h2 id="password"></h2>
+    <button class="copy-button" onclick="copyPassword()">Salin Password</button>
+
+    <script>
+        function generatePassword() {
+            const length = document.getElementById('length').value;
+            const includeLowercase = document.getElementById('lowercase').checked;
+            const includeUppercase = document.getElementById('uppercase').checked;
+            const includeNumbers = document.getElementById('numbers').checked;
+            const includeSymbols = document.getElementById('symbols').checked;
+
+            const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+            const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const numberChars = '0123456789';
+            const symbolChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+
+            let validChars = '';
+            if (includeLowercase) validChars += lowercaseChars;
+            if (includeUppercase) validChars += uppercaseChars;
+            if (includeNumbers) validChars += numberChars;
+            if (includeSymbols) validChars += symbolChars;
+
+            if (validChars.length === 0) {
+                document.getElementById('password').innerText = 'Pilih setidaknya satu jenis karakter!';
+                return;
+            }
+
+            let password = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * validChars.length);
+                password += validChars[randomIndex];
+            }
+
+            document.getElementById('password').innerText = password;
+        }
+
+        function copyPassword() {
+            const passwordText = document.getElementById('password').innerText;
+            if (passwordText) {
+                navigator.clipboard.writeText(passwordText).then(() => {
+                    alert('Password disalin ke clipboard!');
+                }).catch(err => {
+                    alert('Gagal menyalin password: ', err);
+                });
+            } else {
+                alert('Tidak ada password untuk disalin!');
+            }
+        }
+    </script>
+</body>
+</html>

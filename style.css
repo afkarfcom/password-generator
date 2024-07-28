@@ -46,7 +46,7 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
     font-size: 24px;
-    text-align: justify; /* Menggunakan justify untuk teks */
+    text-align: justify-all; /* Menggunakan justify untuk teks */
     color: #4CAF50;
     border: 2px dashed #4CAF50;
     padding: 10px;

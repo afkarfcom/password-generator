@@ -1,36 +1,206 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Halaman Tidak Ditemukan</title>
+    <title>AFKAR - Error 404</title>
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+    <link rel="stylesheet" href="./404errorstyle.css">
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 50px;
+            background-color: #ffdc30;
+            font-family: "Concert One", cursive;
             margin: 0;
+            overflow: hidden;
+            padding: 0;
         }
-        p {
-            font-size: 20px;
+
+        .text {
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 3em;
+            margin: 0;
+            opacity: 0.3;
+            text-align: center;
+            top: 50px;
+            width: 80%;
         }
-        a {
-            text-decoration: none;
-            color: #007BFF;
+
+        .container {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.6);
+            height: 350px;
+            width: 750px;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .container .bg {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 220, 48, 0.2);
+            border-radius: 50%;
+            box-shadow: 0px 0px 0px 90px rgba(147, 41, 44, 0.1);
+            height: 400px;
+            opacity: 0.5;
+            overflow: hidden;
+            width: 400px;
+        }
+
+        .godzilla, .bigrobot {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 350px;
+            width: 200px;
+        }
+
+        .godzilla {
+            right: 0;
+        }
+
+        .bigrobot {
+            left: 0;
+        }
+
+        /* Godzilla styles */
+        .godzilla .shadow, .bigrobot .shadow {
+            position: absolute;
+            background-color: rgba(19, 36, 44, 0.2);
+            border-radius: 20px;
+            bottom: -5px;
+            height: 10px;
+            width: 290px;
+        }
+
+        .godzilla .back, .bigrobot .back {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 36px 18px 0 #529b47, 65px 50px 0 #529b47, 83px 90px 0 #529b47, 87px 135px 0 #529b47;
+            height: 30px;
+            top: 120px;
+            width: 30px;
+        }
+
+        .godzilla .back {
+            background-color: #529b47;
+            right: 80px;
+        }
+
+        .bigrobot .back {
+            background-color: #4c4c4c;
+            left: 60px;
+            transform: rotate(-20deg);
+            height: 180px;
+            top: 100px;
+            width: 80px;
+        }
+
+        /* Additional styles for shapes, legs, arms, and heads omitted for brevity */
+
+        /* Animation styles */
+        .godzilla .arm, .bigrobot .arm {
+            animation: arm-anima infinite 2s ease-in-out;
+        }
+
+        .godzilla .head, .bigrobot .head {
+            animation: head-anima infinite 2s ease-in-out;
+        }
+
+        @keyframes arm-anima {
+            0% { width: 150px; }
+            47% { width: 225px; }
+            70% { width: 150px; }
+        }
+
+        @keyframes head-anima {
+            0% { top: 60px; }
+            47% { top: 80px; }
+            70% { top: 60px; }
+        }
+
+        /* Skyscraper styles */
+        .skyscraper-shadow {
+            position: absolute;
+            background-color: rgba(19, 36, 44, 0.2);
+            border-radius: 20px;
+            bottom: -5px;
+            height: 10px;
+            left: 300px;
+            width: 150px;
+        }
+
+        .skyscraper-box {
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            bottom: 0;
+            height: 300px;
+            overflow: hidden;
+            width: 250px;
+        }
+
+        /* Credit styles */
+        #link {
+            bottom: 20px;
+            color: #13242C;
+            opacity: 0.3;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #link p {
+            margin: 0;
+            margin-left: 5px;
+        }
+
+        #link:hover {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <h1>404</h1>
-    <p>Halaman yang Anda cari tidak ditemukan.</p>
-    <p><a href="/">Kembali ke Beranda</a></p>
+    <div class="container">
+        <div class="bg"></div>
+        <div class="godzilla">
+            <div class="shadow"></div>
+            <div class="back"></div>
+            <div class="shape"></div>
+            <div class="leg"></div>
+            <div class="head"></div>
+            <div class="arm"></div>
+        </div>
+        <div class="bigrobot">
+            <div class="shadow"></div>
+            <div class="back"></div>
+            <div class="shape"></div>
+            <div class="leg"></div>
+            <div class="head"></div>
+            <div id="back2" class="back"></div>
+            <div class="arm"></div>
+        </div>
+        <div class="skyscraper-shadow"></div>
+        <div class="skyscraper-box">
+            <div class="skyscraper">
+                <div class="window"></div>
+            </div>    
+        </div>
+    </div>
+    <a href="https://afkar.site" target="_blank">
+        <div id="link">
+            <i class="fab fa-codepen"></i>
+            <p>Back To Home</p>
+        </div>
+    </a>
+    <script src='https://use.fontawesome.com/releases/v5.0.7/js/all.js'></script>
+    <script src="./404errorscript.js"></script>
 </body>
 </html>

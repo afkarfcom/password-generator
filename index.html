@@ -33,6 +33,8 @@
     <h2 id="password"></h2>
     <button class="copy-button" onclick="copyPassword()">Salin Password</button>
 
+    <div id="toast" class="toast">Pesan akan muncul di sini</div>
+
     <script>
         function updateLengthValue() {
             const length = document.getElementById('length').value;
@@ -82,16 +84,26 @@
             document.getElementById('password').innerText = password;
         }
 
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.innerText = message;
+            toast.className = "toast show";
+
+            setTimeout(() => {
+                toast.className = toast.className.replace("show", "");
+            }, 3000); // Toast akan hilang setelah 3 detik
+        }
+
         function copyPassword() {
             const passwordText = document.getElementById('password').innerText;
             if (passwordText) {
                 navigator.clipboard.writeText(passwordText).then(() => {
-                    alert('Password disalin ke clipboard!');
+                    showToast('Password disalin ke clipboard!');
                 }).catch(err => {
-                    alert('Gagal menyalin password: ', err);
+                    showToast('Gagal menyalin password: ' + err);
                 });
             } else {
-                alert('Tidak ada password untuk disalin!');
+                showToast('Tidak ada password untuk disalin!');
             }
         }
     </script>

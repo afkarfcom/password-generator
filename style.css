@@ -49,11 +49,11 @@ button:hover {
     text-align: center; /* Menggunakan justify untuk teks */
     color: #4CAF50;
     border: 2px dashed #4CAF50;
-    padding: 35px;
+    padding: 20px;
     border-radius: 4px;
     background-color: white;
     word-wrap: break-word; /* Membungkus kata jika terlalu panjang */
-    max-width: 300px; /* Membatasi lebar output */
+    max-width: 200px; /* Membatasi lebar output */
     margin-left: auto;
     margin-right: auto;
 }

@@ -129,3 +129,27 @@ input[type="range"]::-moz-range-track {
     display: inline-block; /* Menjadikan label inline-block */
     margin: 5px; /* Menambahkan margin */
 }
+
+/* Gaya untuk elemen toast */
+.toast {
+    visibility: hidden; /* Sembunyikan toast secara default */
+    min-width: 250px; /* Lebar minimum toast */
+    margin-left: -125px; /* Mengatur margin kiri untuk menempatkan toast di tengah */
+    background-color: #333; /* Warna latar belakang toast */
+    color: #fff; /* Warna teks toast */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    border-radius: 4px; /* Sudut bulat */
+    padding: 16px; /* Padding di dalam toast */
+    position: fixed; /* Memposisikan toast secara tetap */
+    z-index: 1; /* Menempatkan toast di atas elemen lain */
+    left: 50%; /* Menempatkan toast di tengah horizontal */
+    bottom: 30px; /* Jarak dari bagian bawah */
+    font-size: 17px; /* Ukuran font */
+    transition: visibility 0s, opacity 0.5s linear; /* Transisi untuk efek muncul */
+    opacity: 0; /* Opasitas awal */
+}
+
+.toast.show {
+    visibility: visible; /* Tampilkan toast saat kelas 'show' ditambahkan */
+    opacity: 1; /* Opasitas penuh saat ditampilkan */
+}

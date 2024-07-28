@@ -20,8 +20,8 @@
 <body>
     <h1>Password Generator</h1>
     <div class="options">
-        <label for="length">Jumlah Karakter:</label>
-        <input type="number" id="length" min="1" value="8"><br><br>
+        <label for="length">Jumlah Karakter: <span id="lengthValue">8</span></label>
+        <input type="range" id="length" min="4" max="64" value="8" oninput="updateLengthValue()"><br><br>
 
         <label><input type="checkbox" id="lowercase" checked> Huruf Kecil</label>
         <label><input type="checkbox" id="uppercase" checked> Huruf Besar</label>
@@ -34,6 +34,11 @@
     <button class="copy-button" onclick="copyPassword()">Salin Password</button>
 
     <script>
+        function updateLengthValue() {
+            const length = document.getElementById('length').value;
+            document.getElementById('lengthValue').innerText = length;
+        }
+
         function generatePassword() {
             const length = document.getElementById('length').value;
             const includeLowercase = document.getElementById('lowercase').checked;
@@ -58,10 +63,21 @@
             }
 
             let password = '';
-            for (let i = 0; i < length; i++) {
+
+            // Menambahkan satu karakter dari setiap kategori
+            if (includeLowercase) password += lowercaseChars[Math.floor(Math.random() * lowercaseChars.length)];
+            if (includeUppercase) password += uppercaseChars[Math.floor(Math.random() * uppercaseChars.length)];
+            if (includeNumbers) password += numberChars[Math.floor(Math.random() * numberChars.length)];
+            if (includeSymbols) password += symbolChars[Math.floor(Math.random() * symbolChars.length)];
+
+            // Mengisi sisa password dengan karakter acak
+            for (let i = password.length; i < length; i++) {
                 const randomIndex = Math.floor(Math.random() * validChars.length);
                 password += validChars[randomIndex];
             }
+
+            // Mengacak urutan karakter dalam password
+            password = password.split('').sort(() => Math.random() - 0.5).join('');
 
             document.getElementById('password').innerText = password;
         }

@@ -75,7 +75,7 @@ button:hover {
 /* Gaya untuk elemen range slider */
 input[type="range"] {
     -webkit-appearance: none; /* Menghilangkan gaya default pada Webkit */
-    width: 50%; /* Memperluas slider ke lebar penuh */
+    width: 35%; /* Memperluas slider ke lebar penuh */
     height: 8px; /* Tinggi slider */
     background: #ddd; /* Warna latar belakang slider */
     border-radius: 5px; /* Membuat sudut slider menjadi bulat */

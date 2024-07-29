@@ -46,14 +46,14 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
     font-size: 24px;
-    text-align: center; /* Menggunakan justify untuk teks */
+    text-align: center;
     color: #4CAF50;
     border: 2px dashed #4CAF50;
     padding: 15px;
     border-radius: 4px;
     background-color: white;
-    word-wrap: break-word; /* Membungkus kata jika terlalu panjang */
-    max-width: 400px; /* Membatasi lebar output */
+    word-wrap: break-word;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -64,9 +64,9 @@ button:hover {
 }
 
 #lengthValue {
-    display: inline-block; /* Menjadikan elemen inline-block */
-    width: 30px; /* Lebar tetap untuk menghindari goyangan */
-    text-align: center; /* Menyelaraskan teks di tengah */
+    display: inline-block;
+    width: 30px;
+    text-align: center;
 }
 
 .copy-button {
@@ -80,54 +80,53 @@ button:hover {
 
 /* Gaya untuk elemen range slider */
 input[type="range"] {
-    -webkit-appearance: none; /* Menghilangkan gaya default pada Webkit */
-    width: 35%; /* Memperluas slider ke lebar penuh */
-    height: 8px; /* Tinggi slider */
-    background: #ddd; /* Warna latar belakang slider */
-    border-radius: 5px; /* Membuat sudut slider menjadi bulat */
-    outline: none; /* Menghilangkan outline saat slider dipilih */
-    opacity: 0.7; /* Opasitas slider */
-    transition: opacity 0.2s; /* Transisi opasitas */
+    -webkit-appearance: none;
+    width: 35%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
 }
 
 input[type="range"]:hover {
-    opacity: 1; /* Opasitas penuh saat hover */
+    opacity: 1;
 }
 
 /* Gaya untuk thumb slider */
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Menghilangkan gaya default pada Webkit */
-    appearance: none; /* Menghilangkan gaya default */
-    width: 20px; /* Lebar thumb */
-    height: 20px; /* Tinggi thumb */
-    border-radius: 50%; /* Membuat thumb menjadi bulat */
-    background: #4CAF50; /* Warna thumb */
-    cursor: pointer; /* Mengubah kursor saat hover */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 20px; /* Lebar thumb */
-    height: 20px; /* Tinggi thumb */
-    border-radius: 50%; /* Membuat thumb menjadi bulat */
-    background: #4CAF50; /* Warna thumb */
-    cursor: pointer; /* Mengubah kursor saat hover */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
 }
 
 /* Gaya untuk track slider */
 input[type="range"]::-webkit-slider-runnable-track {
-    background: #ddd; /* Warna latar belakang track */
-    border-radius: 5px; /* Membuat sudut track menjadi bulat */
+    background: #ddd;
+    border-radius: 5px;
 }
 
 input[type="range"]::-moz-range-track {
-    background: #ddd; /* Warna latar belakang track */
-    border-radius: 5px; /* Membuat sudut track menjadi bulat */
+    background: #ddd;
+    border-radius: 5px;
 }
 
 /* Gaya untuk checkbox */
 .options label {
-    display: inline-block; /* Menjadikan label inline-block */
-    margin: 5px; /* Menambahkan margin */
+    display: inline-block;
+    margin: 5px;
 }
 
 /* Gaya untuk toast */
@@ -140,11 +139,12 @@ input[type="range"]::-moz-range-track {
     border: 1px solid #ccc; /* Garis border */
     border-left-width: 5px; /* Lebar border kiri */
     border-radius: 4px; /* Sudut melengkung */
-    padding: 10px 15px; /* Padding dalam */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+    padding: 5px 10px; /* Padding dalam lebih kecil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan */
     transition: opacity 0.3s ease; /* Transisi opasitas */
     opacity: 0; /* Awalnya tidak terlihat */
     visibility: hidden; /* Menghilangkan dari tampilan */
+    font-size: 14px; /* Ukuran font lebih kecil */
 }
 
 .toast.show {

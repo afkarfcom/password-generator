@@ -41,8 +41,20 @@
             document.getElementById('lengthValue').innerText = length;
         }
 
+        function getRandomInt(min, max) {
+            const range = max - min;
+            const randomBuffer = new Uint32Array(1);
+            window.crypto.getRandomValues(randomBuffer);
+            return min + (randomBuffer[0] % range);
+        }
+
         function generatePassword() {
-            const length = document.getElementById('length').value;
+            const length = parseInt(document.getElementById('length').value);
+            if (length < 4 || length > 64) {
+                alert('Panjang password harus antara 4 dan 64 karakter.');
+                return;
+            }
+
             const includeLowercase = document.getElementById('lowercase').checked;
             const includeUppercase = document.getElementById('uppercase').checked;
             const includeNumbers = document.getElementById('numbers').checked;
@@ -67,14 +79,14 @@
             let password = '';
 
             // Menambahkan satu karakter dari setiap kategori
-            if (includeLowercase) password += lowercaseChars[Math.floor(Math.random() * lowercaseChars.length)];
-            if (includeUppercase) password += uppercaseChars[Math.floor(Math.random() * uppercaseChars.length)];
-            if (includeNumbers) password += numberChars[Math.floor(Math.random() * numberChars.length)];
-            if (includeSymbols) password += symbolChars[Math.floor(Math.random() * symbolChars.length)];
+            if (includeLowercase) password += lowercaseChars[getRandomInt(0, lowercaseChars.length)];
+            if (includeUppercase) password += uppercaseChars[getRandomInt(0, uppercaseChars.length)];
+            if (includeNumbers) password += numberChars[getRandomInt(0, numberChars.length)];
+            if (includeSymbols) password += symbolChars[getRandomInt(0, symbolChars.length)];
 
             // Mengisi sisa password dengan karakter acak
             for (let i = password.length; i < length; i++) {
-                const randomIndex = Math.floor(Math.random() * validChars.length);
+                const randomIndex = getRandomInt(0, validChars.length);
                 password += validChars[randomIndex];
             }
 
@@ -91,7 +103,7 @@
 
             setTimeout(() => {
                 toast.className = toast.className.replace("show", "");
-            }, 2000); // Toast akan hilang setelah 3 detik
+            }, 2000); // Toast akan hilang setelah 2 detik
         }
 
         function copyPassword() {

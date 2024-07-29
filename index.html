@@ -20,8 +20,8 @@
 <body>
     <h1>Password Generator</h1>
     <div class="options">
-        <label for="length">Jumlah Karakter: <span id="lengthValue">8</span></label>
-        <input type="range" id="length" min="4" max="64" value="8" oninput="updateLengthValue()"><br><br>
+        <label for="length">Jumlah Karakter: <span id="lengthValue">12</span></label>
+        <input type="range" id="length" min="12" max="64" value="12" oninput="updateLengthValue()"><br><br>
 
         <label><input type="checkbox" id="lowercase" checked> Huruf Kecil</label>
         <label><input type="checkbox" id="uppercase" checked> Huruf Besar</label>
@@ -50,8 +50,8 @@
 
         function generatePassword() {
             const length = parseInt(document.getElementById('length').value);
-            if (length < 4 || length > 64) {
-                alert('Panjang password harus antara 4 dan 64 karakter.');
+            if (length < 12 || length > 64) {
+                alert('Panjang password harus antara 12 dan 64 karakter.');
                 return;
             }
 
@@ -78,7 +78,7 @@
 
             let password = '';
 
-            // Menambahkan satu karakter dari setiap kategori
+            // Menambahkan satu karakter dari setiap kategori yang dipilih
             if (includeLowercase) password += lowercaseChars[getRandomInt(0, lowercaseChars.length)];
             if (includeUppercase) password += uppercaseChars[getRandomInt(0, uppercaseChars.length)];
             if (includeNumbers) password += numberChars[getRandomInt(0, numberChars.length)];
@@ -91,7 +91,7 @@
             }
 
             // Mengacak urutan karakter dalam password
-            password = password.split('').sort(() => Math.random() - 0.5).join('');
+            password = password.split('').sort(() => getRandomInt(0, 2) - 1).join('');
 
             document.getElementById('password').innerText = password;
         }

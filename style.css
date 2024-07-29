@@ -136,7 +136,7 @@ input[type="range"]::-moz-range-track {
     right: 20px; /* Jarak dari kanan */
     background-color: white; /* Warna latar belakang */
     color: #333; /* Warna teks */
-    border: 1px solid #4CAF50; /* Garis border */
+    border: 1px solid #ccc; /* Garis border */
     border-left-width: 5px; /* Lebar border kiri */
     border-radius: 4px; /* Sudut melengkung */
     padding: 20px 30px; /* Padding dalam yang lebih besar */

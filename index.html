@@ -20,8 +20,8 @@
 <body>
     <h1>Password Generator</h1>
     <div class="options">
-        <label for="length">Jumlah Karakter: <span id="lengthValue">12</span></label>
-        <input type="range" id="length" min="12" max="64" value="12" oninput="updateLengthValue()"><br><br>
+        <label for="length">Jumlah Karakter: <span id="lengthValue">4</span></label>
+        <input type="range" id="length" min="4" max="64" value="4" oninput="updateLengthValue()"><br><br>
 
         <label><input type="checkbox" id="lowercase" checked> Huruf Kecil</label>
         <label><input type="checkbox" id="uppercase" checked> Huruf Besar</label>
@@ -59,8 +59,8 @@
 
         function generatePassword() {
             const length = parseInt(document.getElementById('length').value);
-            if (length < 12 || length > 64) {
-                alert('Panjang password harus antara 12 dan 64 karakter.');
+            if (length < 4 || length > 64) {
+                alert('Panjang password harus antara 4 dan 64 karakter.');
                 return;
             }
 

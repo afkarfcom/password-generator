@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
-    
+
     <!-- Link ke file CSS -->
     <link rel="stylesheet" href="/style.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -39,6 +39,12 @@
         function updateLengthValue() {
             const length = document.getElementById('length').value;
             document.getElementById('lengthValue').innerText = length;
+        }
+
+        function sanitizeInput(input) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerText = input;
+            return tempDiv.innerHTML;
         }
 
         function generatePassword() {
@@ -81,7 +87,7 @@
             // Mengacak urutan karakter dalam password
             password = password.split('').sort(() => Math.random() - 0.5).join('');
 
-            document.getElementById('password').innerText = password;
+            document.getElementById('password').innerText = sanitizeInput(password); // Sanitasi output
         }
 
         function showToast(message) {
@@ -91,7 +97,7 @@
 
             setTimeout(() => {
                 toast.className = toast.className.replace("show", "");
-            }, 2000); // Toast akan hilang setelah 3 detik
+            }, 2000); // Toast akan hilang setelah 2 detik
         }
 
         function copyPassword() {

@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/favicon.ico",
+      "source": "/favicon/favicon.ico",
       "headers": [
         {
           "key": "X-Content-Type-Options",

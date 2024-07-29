@@ -139,12 +139,12 @@ input[type="range"]::-moz-range-track {
     border: 1px solid #ccc; /* Garis border */
     border-left-width: 5px; /* Lebar border kiri */
     border-radius: 4px; /* Sudut melengkung */
-    padding: 5px 10px; /* Padding dalam lebih kecil */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan */
+    padding: 20px 30px; /* Padding dalam yang lebih besar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
     transition: opacity 0.3s ease; /* Transisi opasitas */
     opacity: 0; /* Awalnya tidak terlihat */
     visibility: hidden; /* Menghilangkan dari tampilan */
-    font-size: 14px; /* Ukuran font lebih kecil */
+    font-size: 18px; /* Ukuran font yang lebih besar */
 }
 
 .toast.show {
